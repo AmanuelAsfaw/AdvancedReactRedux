@@ -4,10 +4,10 @@ import { createStore } from 'redux';
 
 import reducers from './reducers';
 
-const Root = (props) => {
+const Root = ({children, initialState}) => {
     return (
-        <Provider store={createStore(reducers, {})}>
-            {props.children}
+        <Provider store={createStore(reducers, initialState)}>
+            {children}
         </Provider>
     );
     
