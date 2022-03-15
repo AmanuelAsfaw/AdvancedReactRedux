@@ -6,7 +6,7 @@ const comments = function(state = [], action) {
             return [...state, action.payload];
         case FETCH_COMMENTS:
             console.log(action.payload.data);
-            const comments = action.payload.data.data.stations.slice(0,10).map(comment => comment.short_name);
+            const comments = action.payload.data.map(comment => comment.name);
             console.log(comments);
             return [...state, ...comments];
         default:

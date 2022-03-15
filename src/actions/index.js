@@ -9,7 +9,8 @@ export function saveComment(comment) {
 }
 
 export function fetchComments() {
-    const response = axios.get('http://gbfs.citibikenyc.com/gbfs/en/station_information.json')
+    const response = axios.get('https://jsonplaceholder.cypress.io/posts')
+    // const response = axios.get('http://gbfs.citibikenyc.com/gbfs/en/station_information.json')
     console.log(response);
     return {
         type: FETCH_COMMENTS,
