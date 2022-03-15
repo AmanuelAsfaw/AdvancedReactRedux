@@ -25,7 +25,7 @@ it('can fetch a list of comment and display them', () => {
     // find the 'fetchComments' button and click it
     wrapped.find('.fetch-comments').simulate('click');
     // give some time to delay -> to fetch from url
-    setTimeout(() => {
+    moxios.wait(() => {
         wrapped.update();
         
         // Expect to find a list of comments!
