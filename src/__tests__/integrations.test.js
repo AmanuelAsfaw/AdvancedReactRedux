@@ -15,6 +15,7 @@ beforeEach(() => {
 afterEach(() => {
     moxios.uninstall();
 });
+
 it('can fetch a list of comment and display them', () => {
     // Attempt to render the *entire* app
     const wrapped = mount(
