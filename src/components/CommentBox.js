@@ -1,10 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import * as actions from "../actions";
+import withRouter from "./HOC/withRoute";
 
 class  CommentBox extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { comment: '' };
+        this.shouldNavigateAway = this.shouldNavigateAway.bind(this);
+    }
     state = { comment: '' }
-    
+    // Our component just got rendered
+    componentDidMount() {
+        this.shouldNavigateAway();
+    }
+
+    // Our component just got updated
+    componentDidUpdate() {
+        this.shouldNavigateAway();
+    }
+
+    shouldNavigateAway() {
+        if (!this.props.auth) {
+            console.log('I NEED TO LEAVE!!!');
+            this.props.history('/', { replace: true });            
+        }
+        else{
+            console.log('else state');
+        }
+    }
+
     handleChange = event => {
         this.setState({comment: event.target.value });
     };
@@ -35,4 +61,9 @@ class  CommentBox extends Component {
     };
 }
 
-export default connect(null, actions)(CommentBox);
+function mapStateToProps(state) {
+    return {
+        auth : state.auth
+    };
+}
+export default connect(mapStateToProps, actions)(withRouter(CommentBox));
