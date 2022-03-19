@@ -40,8 +40,8 @@ class App extends Component {
             <div className="App">
                 { this.renderHeader() }
                 <Routes>
-                    <Route path="/post" element={<CommentBox {...this.props}/>}/>
-                    <Route path="/" element={<CommentList {...this.props}/>}/>
+                    <Route path="/post" element={<CommentBox />}/>
+                    <Route path="/" element={<CommentList />}/>
                 </Routes>            
             </div>
         );
