@@ -5,8 +5,9 @@ const comments = function(state = [], action) {
         case SAVE_COMMENT:
             return [...state, action.payload];
         case FETCH_COMMENTS:
+            debugger;
             console.log(action.payload.data);
-            const comments = action.payload.data.map(comment => comment.name);
+            const comments = action.payload.data.map(comment => comment.title);
             console.log(comments);
             return [...state, ...comments];
         default:
