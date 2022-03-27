@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     errorMessage: ''
 };
 
-export default function(state = INITIAL_STATE, action) {
+const auth = (state = INITIAL_STATE, action) =>{
     switch (action.type){
         case AUTH_USER:
             return { ...state, authenticated: action.payload };
@@ -15,3 +15,4 @@ export default function(state = INITIAL_STATE, action) {
             return state;
     }
 }
+export default auth;
