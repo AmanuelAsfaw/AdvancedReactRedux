@@ -47,6 +47,7 @@ const Signup = props => {
 function mapStateToProps(state){
     return { errorMessage: state.auth.errorMessage };
 }
+
 // compose helps to apply multiple Higher Order Component to a single component with more attractive syntax
 export default compose(
     connect(mapStateToProps, actions),
