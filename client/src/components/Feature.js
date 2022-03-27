@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import requireAuth from "./HOC/requireAuth";
 
 class Feature extends Component {
     render() {
@@ -8,4 +9,4 @@ class Feature extends Component {
     }
 }
 
-export default Feature;
+export default requireAuth(Feature);

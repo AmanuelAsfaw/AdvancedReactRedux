@@ -2,10 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import withRouter from "./withRoute";
-
 const ComposedComponent = (props) => {
-    console.log('props', props);
     const { ChildComponent, history } = props;
     let navigate = useNavigate();
 
@@ -19,9 +16,8 @@ const ComposedComponent = (props) => {
         else{
             console.log('else state');
         }
-    },[]);
+    });
 
-    return <div>asdf</div>
     return ChildComponent;
 }
 
@@ -31,4 +27,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(withRouter(ComposedComponent));
+export default connect(mapStateToProps)(ComposedComponent);

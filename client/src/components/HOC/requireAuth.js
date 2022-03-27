@@ -1,9 +1,7 @@
 import React, { Component}  from "react";
-import { connect } from "react-redux";
 import ComposedComponent from "./ComposedComponent";
-import withRouter from "./withRoute";
 
-const auth = (ChildComponent) => {
+const requireAuth = (ChildComponent) => {
 
     const PutChildComponent = () => {
         return <ComposedComponent ChildComponent={ <ChildComponent/> }/>;
@@ -12,4 +10,4 @@ const auth = (ChildComponent) => {
     return PutChildComponent;
 };
 
-export default auth;
+export default requireAuth;
